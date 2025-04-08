@@ -12,7 +12,6 @@ public class PropertiesHelper {
         LinkedList<String> files = new LinkedList<>();
 
         files.add("\\src\\main\\resources\\config\\config.properties");
-        files.add("\\src\\main\\resources\\extent.properties");
 
         try {
             Properties properties = new Properties();
@@ -28,8 +27,6 @@ public class PropertiesHelper {
             return properties;
         } catch (IOException e) {
             return new Properties();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 }
