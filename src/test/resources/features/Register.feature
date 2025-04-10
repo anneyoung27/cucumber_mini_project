@@ -12,7 +12,7 @@ Feature: Registration functionality
       | password  | 12345                  |
     And User selects Privacy Policy
     And User clicks on Continue button
-    Then User account should get created successfully
+    Then User account should get created successfully and go to the dashboard
 
 
   Scenario: User creates an account with all fields
@@ -24,7 +24,7 @@ Feature: Registration functionality
     And User selects Yes for Newsletter
     And User selects Privacy Policy
     And User clicks on Continue button
-    Then User account should get created successfully
+    Then User account should get created successfully and go to the dashboard
 
   Scenario: User creates an account with duplicate account
     When User enters the details into below fields

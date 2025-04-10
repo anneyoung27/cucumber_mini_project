@@ -28,6 +28,9 @@ public class RegisterPage extends WebUI {
     By errorEmail = By.xpath("//div[@id='error-email']");
     By errorPassword = By.xpath("//div[@id='error-password']");
 
+    By successfullyCreatedAccount = By.xpath("//h1[normalize-space()='Your Account Has Been Created!']");
+    By goToDashboardAccount = By.xpath("//a[normalize-space()='Continue']");
+
     public void goToRegisterFormPage(){
         clickElement(goToRegisterForm);
     }
@@ -86,7 +89,14 @@ public class RegisterPage extends WebUI {
         return getElementText(errorPassword);
     }
 
+    public String getSuccessCreatedAccount(){
+        return getElementText(successfullyCreatedAccount);
+    }
 
+    public void clickContinueToGoToDashboardAccount(){
+        waitForElementToBeClicked(goToDashboardAccount);
+        clickElement(goToDashboardAccount);
+    }
 
 
 }

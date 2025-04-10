@@ -41,8 +41,12 @@ public class RegisterStepDefinitions extends DriverFactory {
         registerPage.clickContinueToRegisterAccount();
     }
 
-    @Then("User account should get created successfully")
-    public void userAccountShouldGetCreatedSuccessfully() {
+    @Then("User account should get created successfully and go to the dashboard")
+    public void userAccountShouldGetCreatedSuccessfullyAndGoToTheDashboard() {
+        String actualSuccessMessage = registerPage.getSuccessCreatedAccount();
+        Assert.assertEquals(actualSuccessMessage, "Your Account Has Been Created!");
+
+        registerPage.clickContinueToGoToDashboardAccount();
     }
 
     @And("User selects Yes for Newsletter")
@@ -79,6 +83,7 @@ public class RegisterStepDefinitions extends DriverFactory {
         String actualErrorPasswordMessage = registerPage.getPasswordError();
         Assert.assertEquals(actualErrorPasswordMessage, "Password must be between 4 and 20 characters!");
     }
+
 
 
 }
