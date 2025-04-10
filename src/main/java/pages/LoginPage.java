@@ -9,7 +9,6 @@ public class LoginPage extends WebUI {
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
-
     }
 
     By emailAddressTextBox = By.xpath("//input[@id='input-email']");
